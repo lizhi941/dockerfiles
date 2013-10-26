@@ -11,8 +11,8 @@ Pull image and configure:
  - SSH key location has already been specified (this is intentional)
 
 ```bash
-$ docker pull weisjohn/gitlab-ci-runner
-$ docker run -i -t weisjohn/gitlab-ci-runner /gcr/bin/install
+$ docker pull nekroze/gitlab-ci-runner
+$ docker run -i -t nekroze/gitlab-ci-runner /gcr/bin/install
 Please type gitlab-ci url (Ex. http://gitlab-ci.org:3000/ )
 http://192.168.1.1:8080/
 Generating public/private rsa key pair.
@@ -36,10 +36,6 @@ The key's randomart image is:
 +-----------------+
 Please type gitlab-ci runners token: 
 7a7154771ce1aadd8b08
-You are using an old or stdlib version of json gem
-Please upgrade to the recent version by adding this to your Gemfile:
-
-  gem 'json', '~> 1.7.7'
 
 Runner Token: bcfbefbd0c414f6766c23943f11b65
 Runner registered. Feel free to start it
@@ -49,7 +45,7 @@ Once you have a container and setup the SSH key, you need to browse to your Gitl
 
 ![Click the "Assign to all" button][addtoall]
 
-[addtoall]: https://raw.github.com/Ensequence/dockerfiles/master/gitlab-ci-runner/addtoall.png "Assign to all"
+[addtoall]: https://raw.github.com/Nekroze/dockerfiles/master/gitlab-ci-runner/addtoall.png "Assign to all"
 
 
 ### 2. Ensure SSH Connectivity
@@ -59,7 +55,7 @@ Once the install is finished, Docker will close the process.  Now, you need to c
 ```bash
 $ docker ps -a | head -n 2
 ID                  IMAGE                              COMMAND                CREATED             STATUS              PORTS
-50a2e96272af        weisjohn/gitlab-ci-runner:latest   /gcr/bin/install       40 seconds ago      Exit 0
+50a2e96272af        nekroze/gitlab-ci-runner:latest   /gcr/bin/install       40 seconds ago      Exit 0
 ```
 
 The "50a2e96272af" is the ID of the container that was just installed.  To use it, you want to commit it to a named container. You should pick some sort of name like gitlab-ci-runner
@@ -76,6 +72,20 @@ The authenticity of host '192.168.1.1 (192.168.1.1)' can't be established.
 ECDSA key fingerprint is 6c:81:e0:19:e9:72:d0:19:d4:e0:02:ec:6f:5c:8c:9f.
 Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added '192.168.1.1' (ECDSA) to the list of known hosts.
+```
+
+#### 2.1 Install testing packages
+
+While the image is active this would be a good time to install any packages you may need for testing your gitlab projects.
+
+```bash
+root@94041103155a:/# packer-color -S --noconfirm --noedit python-pip
+root@94041103155a:/# packer-color -S --noconfirm --noedit python-tox
+```
+
+We can now exit the image.
+
+```bash
 root@94041103155a:/# exit
 ```
 
