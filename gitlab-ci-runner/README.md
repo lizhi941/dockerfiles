@@ -79,11 +79,15 @@ Warning: Permanently added '192.168.1.1' (ECDSA) to the list of known hosts.
 While the image is active this would be a good time to install any packages you may need for testing your gitlab projects.
 
 ```bash
-root@94041103155a:/# packer-color -S --noconfirm --noedit python-pip
-root@94041103155a:/# packer-color -S --noconfirm --noedit python-tox
+root@94041103155a:/# exec >/dev/tty 2>/dev/tty </dev/tty
+root@94041103155a:/# yaourt -S --noconfirm python-pip
+root@94041103155a:/# yaourt -S --noconfirm python-tox
 ```
 
-We can now exit the image.
+The first line above is a work around for the arch package manager not 
+working correctly inside an interactive docker.
+
+We can now exit the image when we are done.
 
 ```bash
 root@94041103155a:/# exit
