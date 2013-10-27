@@ -1,6 +1,6 @@
 # gitlab-ci-runner
 
-FROM        base/devel
+FROM        base/devel:latest
 MAINTAINER  nekroze "nekroze@eturnilnetwork.com"
 
 
