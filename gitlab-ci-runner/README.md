@@ -1,6 +1,8 @@
-
 # gitlab-ci-runner
 
+This is a fork of the good gitlab-ci-runner at
+`http://github.com/Ensequence/dockerfiles` and has been redesigned to use arch
+linux as a base rather then ubuntu.
 
 ### 1. Installation and SSH Setup
 
