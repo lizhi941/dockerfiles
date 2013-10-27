@@ -3,16 +3,13 @@
 FROM        base/devel:latest
 MAINTAINER  nekroze "nekroze@eturnilnetwork.com"
 
-
 # install deps
 
-RUN  pacman-key --refresh-keys
 RUN  yaourt -Syu --noconfirm
 
-RUN  yaourt -S --noconfirm ruby
+RUN  yaourt -S --noconfirm ruby git openssh zlib
 RUN  yaourt -S --noconfirm ruby-bundler wget curl libxml2 libxslt
 RUN  yaourt -S --noconfirm readline openssl icu postfix libyaml
-RUN  yaourt -S --noconfirm git openssh zlib
 
 ## install gitlab-ci-runner into /gcr
 
