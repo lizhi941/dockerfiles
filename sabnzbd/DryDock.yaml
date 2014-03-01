@@ -2,7 +2,7 @@ name: newz
 base: nekroze/sabnzbd
 http_port: 8080
 https_port: 9090
-volumes: [/opt/sabnzbd]
+volumes: [/config]
 external: No
 data: Yes
 
