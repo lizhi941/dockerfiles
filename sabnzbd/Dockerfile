@@ -5,7 +5,6 @@ pacman -Syu
 pacman -S sabnzbnd
 
 VOLUME /config
-VOLUME /data
 
 ADD ./start.sh /start.sh
 RUN chmod u+x  /start.sh
