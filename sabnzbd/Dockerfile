@@ -1,8 +1,8 @@
-FROM base/arch
+FROM base/devel:latest
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm sabnzbnd
+RUN yaourt -Syu --noconfirm
+RUN yaourt -S --noconfirm sabnzbd
 
 VOLUME /config
 
