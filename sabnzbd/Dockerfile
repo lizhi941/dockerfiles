@@ -2,7 +2,7 @@ FROM base/devel:latest
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN yaourt -Syu --noconfirm
-RUN yaourt -S --noconfirm sabnzbd python-pyopenssl
+RUN yaourt -S --noconfirm sabnzbd python2-pyopenssl
 
 VOLUME /config
 
