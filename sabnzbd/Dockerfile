@@ -1,8 +1,8 @@
 FROM base/arch
 MAINTAINER Taylor "Nekroze" Lawson
 
-pacman -Syu
-pacman -S sabnzbnd
+RUN pacman -Syu
+RUN pacman -S sabnzbnd
 
 VOLUME /config
 
