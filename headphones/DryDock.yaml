@@ -1,0 +1,7 @@
+name: music
+base: nekroze/headphones
+http_port: 8181
+volumes: [/config]
+external: No
+data: Yes
+
