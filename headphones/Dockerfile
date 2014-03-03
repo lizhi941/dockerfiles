@@ -1,11 +1,13 @@
-FROM base/devel:latest
+FROM base/arch
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN yaourt -Syu --noconfirm
-RUN yaourt -S --noconfirm headphones-git
+RUN pacman -Syu --noconfirm
+RUN pacman -S --noconfirm python2 git
+
+RUN git clone https://github.com/rembo10/headphones.git /headphones
 
 VOLUME /config
 
 EXPOSE 8181
 
-CMD /usr/bin/headphones --datadir /config --nolaunch
+CMD python2 /headphones/Headphones.py --datadir /config
