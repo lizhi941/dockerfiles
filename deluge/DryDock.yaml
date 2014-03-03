@@ -1,4 +1,4 @@
-name: newz
+name: torrentz
 base: nekroze/deluge
 http_port: 8112
 exposed_ports:
