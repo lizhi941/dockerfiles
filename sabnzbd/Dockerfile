@@ -2,13 +2,10 @@ FROM base/devel:latest
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN yaourt -Syu --noconfirm
-RUN yaourt -S --noconfirm sabnzbd python2-pyopenssl
+RUN yaourt -S --noconfirm sabnzbd-git python2-pyopenssl
 
 VOLUME /config
 
-ADD ./start.sh /start.sh
-RUN chmod u+x  /start.sh
+expose 8080
 
-expose 8080 9090
-
-ENTRYPOINT ["/start.sh"]
+ENTRYPOINT python2 /usr/share/sabnzbd/SABnzbd.py --config-file /config --server :8080

@@ -1,7 +1,6 @@
-name: newz
+name: usenet
 base: nekroze/sabnzbd
 http_port: 8080
-https_port: 9090
 volumes: [/config]
 external: No
 data: Yes
