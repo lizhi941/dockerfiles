@@ -1,0 +1,7 @@
+name: movies
+base: nekroze/couchpotato
+http_port: 5050
+volumes: [/root/.couchpotato/]
+external: No
+data: Yes
+
