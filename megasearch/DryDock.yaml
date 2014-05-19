@@ -1,0 +1,6 @@
+name: search
+base: nekroze/megasearch
+http_port: 5000
+volumes: [/mnt/config]
+external: No
+
