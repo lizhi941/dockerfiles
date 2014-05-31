@@ -1,0 +1,7 @@
+name: ebooks
+base: nekroze/lazylibrarian
+http_port: 5299
+volumes: [/config]
+external: No
+data: Yes
+
