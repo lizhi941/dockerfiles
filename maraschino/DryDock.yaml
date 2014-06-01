@@ -1,0 +1,7 @@
+name: media
+base: nekroze/maraschino
+http_port: 7000
+volumes: [/config]
+external: No
+data: Yes
+
