@@ -1,7 +1,7 @@
 FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN pacman -Syu --noconfirm
+RUN pacman -Sy --noconfirm
 RUN pacman -S --noconfirm git python2-pyopenssl
 
 RUN git clone https://github.com/mrkipling/maraschino.git /maraschino
