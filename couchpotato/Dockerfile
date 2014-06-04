@@ -1,11 +1,13 @@
-FROM base/devel:latest
+FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN yaourt -Syu --noconfirm
-RUN yaourt -S --noconfirm couchpotato-git python2-pyopenssl
+RUN pacman -Syu --noconfirm
+RUN pacman -S --noconfirm python2-pyopenssl git
+
+RUN git clone https://github.com/RuudBurger/CouchPotatoServer.git /couchpotato
 
 VOLUME /root/.couchpotato/
 
 expose 5050
 
-ENTRYPOINT python2 /opt/couchpotato/CouchPotato.py
+ENTRYPOINT python2 /couchpotato/CouchPotato.py

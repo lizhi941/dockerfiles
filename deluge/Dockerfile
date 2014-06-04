@@ -1,4 +1,4 @@
-FROM base/arch
+FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Syu --noconfirm

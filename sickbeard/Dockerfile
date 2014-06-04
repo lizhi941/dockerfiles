@@ -1,10 +1,12 @@
-FROM base/devel:latest
+FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN yaourt -Syu --noconfirm
-RUN yaourt -S --noconfirm sickbeard-git python2-pyopenssl
+RUN pacman -Syu --noconfirm
+RUN pacman -S --noconfirm python2-pyopenssl git
+
+RUN git clone https://github.com/midgetspy/Sick-Beard.git /sickbeard
 
 VOLUME /mnt/state
 expose 8081
 
-ENTRYPOINT python2 /opt/sickbeard/SickBeard.py --datadir=/mnt/state
+ENTRYPOINT python2 /sickbeard/SickBeard.py --datadir=/mnt/state

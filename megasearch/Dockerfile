@@ -1,11 +1,12 @@
-FROM base/devel:latest
+FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN yaourt -Syu --noconfirm
-RUN pacman -S --noconfirm python2-pyopenssl
-RUN git clone https://github.com/pillone/usntssearch.git
+RUN pacman -Syu --noconfirm
+RUN pacman -S --noconfirm python2-pyopenssl git
+
+RUN git clone https://github.com/pillone/usntssearch.git /usntssearch
 
 VOLUME /mnt/state
 expose 5000
 
-CMD cd usntssearch/NZBmegasearch && touch /mnt/state/custom_params.ini && ln -s /mnt/state/custom_params.ini ./custom_params.ini && python2 mega2.py
+CMD touch /mnt/state/custom_params.ini && ln -s /mnt/state/custom_params.ini /usntssearch/NZBmegasearch/custom_params.ini && python2 /usntssearch/NZBmegasearch/mega2.py

@@ -1,11 +1,13 @@
-FROM base/devel:latest
+FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
-RUN yaourt -Syu --noconfirm
-RUN yaourt -S --noconfirm sabnzbd-git python2-pyopenssl
+RUN pacman -Syu --noconfirm
+RUN pacman -S --noconfirm python2-pyopenssl git
+
+RUN git clone https://github.com/sabnzbd/sabnzbd.git /sabnzbd
 
 VOLUME /config
 
 expose 8080
 
-ENTRYPOINT python2 /usr/share/sabnzbd/SABnzbd.py --config-file /config --server :8080
+ENTRYPOINT python2 /sabnzbd/SABnzbd.py --config-file /config --server :8080

@@ -1,8 +1,8 @@
-FROM base/arch
+FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Syu --noconfirm
-RUN pacman -S --noconfirm python2 git
+RUN pacman -S --noconfirm git python2-pyopenssl
 
 RUN git clone https://github.com/mrkipling/maraschino.git /maraschino
 
