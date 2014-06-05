@@ -2,7 +2,7 @@ FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Sy --noconfirm
-RUN pacman -S --noconfirm python2-pyopenssl python2-cheetah git
+RUN pacman -S --noconfirm python2-pyopenssl python2-cheetah git par2cmdline unzip unrar
 
 RUN git clone https://github.com/sabnzbd/sabnzbd.git /sabnzbd
 
