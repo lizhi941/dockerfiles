@@ -4,7 +4,7 @@ MAINTAINER Taylor "Nekroze" Lawson
 RUN pacman -Sy --noconfirm
 RUN pacman -S --noconfirm python2-pyopenssl git
 
-RUN git clone https://github.com/pillone/usntssearch.git /usntssearch
+RUN git clone -b tvrage-fix https://github.com/Nekroze/usntssearch.git /usntssearch
 
 VOLUME /mnt/state
 expose 5000
