@@ -4,7 +4,7 @@ MAINTAINER Taylor "Nekroze" Lawson
 RUN pacman -Sy --noconfirm
 RUN pacman -S --noconfirm python2-pyopenssl git
 RUN pacman -S --noconfirm python2-cheetah
-RUN pacman -S --noconfirm par2cmdline unzip unrar
+RUN pacman -S --noconfirm par2cmdline unzip unrar python2-yenc
 
 RUN git clone https://github.com/sabnzbd/sabnzbd.git /sabnzbd
 
