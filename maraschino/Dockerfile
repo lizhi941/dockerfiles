@@ -3,6 +3,7 @@ MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Sy --noconfirm
 RUN pacman -S --noconfirm git python2-pyopenssl
+RUN pacman -S --noconfirm ssh
 
 RUN git clone https://github.com/mrkipling/maraschino.git /maraschino
 
