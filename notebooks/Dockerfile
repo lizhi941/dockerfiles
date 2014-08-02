@@ -2,8 +2,7 @@ FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Sy --noconfirm
-RUN pacman -Rns --noconfirm lzo2
-RUN pacman -S --noconfirm ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib numpy
+RUN yes | pacman -S ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib python-numpy
 
 RUN ipython profile create
 
