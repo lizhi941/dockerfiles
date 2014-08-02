@@ -5,6 +5,7 @@ RUN pacman -Sy --noconfirm
 RUN yes | pacman -S ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib python-numpy
 
 RUN ipython profile create
+RUN ipython -c "%matplotlib inline"
 
 VOLUME /notebooks
 WORKDIR /notebooks
