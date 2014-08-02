@@ -1,7 +1,5 @@
-cat <<EOF >> /.ipython/profile_default/ipython_notebook_config.py \
-c.IPKernelApp.pylab = 'inline' \
-c.NotebookApp.ip = '*' \
-c.NotebookApp.open_browser = False \
-c.NotebookApp.port = 8888 \
-c.NotebookApp.trust_xheaders = True \
-EOF
+echo "c.IPKernelApp.pylab = 'inline'" >> /.ipython/profile_default/ipython_notebook_config.py
+echo "c.NotebookApp.ip = '*'" >> /.ipython/profile_default/ipython_notebook_config.py
+echo "c.NotebookApp.open_browser = False" >> /.ipython/profile_default/ipython_notebook_config.py
+echo "c.NotebookApp.port = 8888" >> /.ipython/profile_default/ipython_notebook_config.py
+echo "c.NotebookApp.trust_xheaders = True" >> /.ipython/profile_default/ipython_notebook_config.py
