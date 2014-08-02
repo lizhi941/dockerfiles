@@ -3,7 +3,6 @@ c.IPKernelApp.pylab = 'inline'
 c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False
 c.NotebookApp.port = 8888
-c.NotebookApp.webapp_settings = {'static_url_prefix':'/static/'}
 EOF
 
 if [ ! -z "$PASSWORD" ]; then
