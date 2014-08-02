@@ -4,6 +4,8 @@ MAINTAINER Taylor "Nekroze" Lawson
 RUN pacman -Sy --noconfirm
 RUN pacman -S --noconfirm ipython python-pyzmq python-tornado python-nose python-jinja
 
+RUN ipython profile create
+
 VOLUME /notebooks
 WORKDIR /notebooks
 
