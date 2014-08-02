@@ -3,7 +3,7 @@ MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Sy --noconfirm
 RUN pacman -Rns --noconfirm lzo2
-RUN pacman -S --noconfirm ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib
+RUN pacman -S --noconfirm ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib numpy
 
 RUN ipython profile create
 
