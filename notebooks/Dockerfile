@@ -4,14 +4,9 @@ MAINTAINER Taylor "Nekroze" Lawson
 RUN pacman -Sy --noconfirm
 RUN yes | pacman -S ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib python-numpy
 
+ADD prep.sh /root/prep.sh
 RUN ipython profile create
-RUN cat <<EOF >> /.ipython/profile_default/ipython_notebook_config.py \
-c.IPKernelApp.pylab = 'inline' \
-c.NotebookApp.ip = '*' \
-c.NotebookApp.open_browser = False \
-c.NotebookApp.port = 8888 \
-c.NotebookApp.trust_xheaders = True \
-EOF
+RUN sh /root/prep.sh
 RUN ipython -c "%matplotlib"
 
 VOLUME /notebooks
