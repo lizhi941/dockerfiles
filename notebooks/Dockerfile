@@ -12,6 +12,9 @@ VOLUME /notebooks
 WORKDIR /notebooks
 
 EXPOSE 8888
+# Mount your cert here
+ENV PEM_FILE /key.pem
+ENV PASSWORD Dont make this your default
 
 ADD start.sh /root/start.sh
 
