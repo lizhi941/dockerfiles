@@ -12,7 +12,6 @@ VOLUME /notebooks
 WORKDIR /notebooks
 
 EXPOSE 8888
-ENV PASSWORD ChangeMe!
 
 ADD start.sh /root/start.sh
 
