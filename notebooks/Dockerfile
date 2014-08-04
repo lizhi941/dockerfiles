@@ -2,7 +2,7 @@ FROM base/archlinux
 MAINTAINER Taylor "Nekroze" Lawson
 
 RUN pacman -Sy --noconfirm
-RUN yes | pacman -S ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib python-numpy
+RUN yes | pacman -S ipython python-pyzmq python-tornado python-nose python-jinja python-pygments texlive-core mesa-libgl python-matplotlib python-numpy python-pip
 
 ADD prep.sh /root/prep.sh
 RUN ipython profile create
