@@ -5,9 +5,9 @@ RUN yum install httpd php php-gd php-gettext php-pgsql php-mysql php-pdo wget ta
 
 RUN wget http://www.bacula-web.org/files/bacula-web.org/downloads/bacula-web-latest.tgz && \
     tar -xzf bacula-web-latest.tgz -C /var/www/html/ && \
-    chown -Rv apache /var/www/html/ && \
-    chmod -Rv u=rx,g=rx,o=rx /var/www/html/ && \
-    chmod -Rv u=rwx,g=rwx,o=rx /var/www/html/application/view/cache && \
+    chown -R apache /var/www/html/ && \
+    chmod -R u=rx,g=rx,o=rx /var/www/html/ && \
+    chmod -R u=rwx,g=rwx,o=rx /var/www/html/application/view/cache && \
     rm -f bacula-web-latest.tgz
 
 ENV DB_TYPE pgsql
