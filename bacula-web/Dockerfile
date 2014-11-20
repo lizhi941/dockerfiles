@@ -3,7 +3,7 @@ MAINTAINER Taylor "Nekroze" Lawson <tlawson@nekroze.com>
 
 RUN yum install httpd php php-gd php-gettext php-pgsql php-mysql php-pdo wget tar -y
 
-RUN wget http://www.bacula-web.org/files/bacula-web.org/downloads/bacula-web-latest.tgz && \
+RUN wget -q http://www.bacula-web.org/files/bacula-web.org/downloads/bacula-web-latest.tgz && \
     tar -xzf bacula-web-latest.tgz -C /var/www/html/ && \
     chown -R apache /var/www/html/ && \
     chmod -R u=rx,g=rx,o=rx /var/www/html/ && \
