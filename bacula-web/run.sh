@@ -2,7 +2,7 @@
 
 cat > /var/www/html/application/config/config.php <<EOF
 <?php
-\$config[0]['language'] = 'en_EN';
+\$config[0]['language'] = 'en_US';
 \$config['show_inactive_clients'] = false;
 \$config['hide_empty_pools'] = true;
 \$config[1]['label'] = 'Database';
