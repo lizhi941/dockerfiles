@@ -7,6 +7,7 @@ RUN wget http://www.bacula-web.org/files/bacula-web.org/downloads/bacula-web-lat
     tar -xzf bacula-web-latest.tgz -C /var/www/html/ && \
     chown -Rv apache /var/www/html/ && \
     chmod -Rv u=rx,g=rx,o=rx /var/www/html/ && \
+    chmod -Rv u=rwx,g=rwx,o=rx /var/www/html/application/view/cache && \
     rm -f bacula-web-latest.tgz
 
 ENV DB_TYPE pgsql
