@@ -7,7 +7,7 @@ RUN echo "SigLevel = Never" >> /etc/pacman.conf
 RUN echo "Server = http://repo.archlinux.fr/$arch" >> /etc/pacman.conf
 RUN pacman -S yaourt --noconfirm
 
-RUN yaourt -S python-keepass-httpd-git --noconfirm
+RUN yaourt -Sy python-keepass-httpd-git --noconfirm
 
 VOLUME /keepass
 EXPOSE 19455
